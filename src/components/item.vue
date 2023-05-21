@@ -56,7 +56,6 @@ export default {
     onMounted(() => {
       
       timer(timerRef.value, props.single.duration != undefined ? props.single.duration : 5000)
-      console.log(getTime)
       setTimeout(() => {
         choice.value = false
       }, props.single.duration != undefined ? props.single.duration : 5000)
