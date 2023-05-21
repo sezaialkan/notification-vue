@@ -1,10 +1,14 @@
+
 ## notification-vue
 
-[![NPM Version](https://img.shields.io/badge/npm-v1.0.1-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
+[![NPM Version](https://img.shields.io/badge/npm-v1.0.2-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
 
 ## using notification-vue
 
 With the notification-vue package, you can show push notifications in a specific area of ​​the window. There is a time bar on the notification box and a time indicator of when the notification occurred.
+
+# Demo 
+https://notification.sezaialkan.com/
 
 ## notification-vue setup
 
