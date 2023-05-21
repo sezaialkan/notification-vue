@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+$margins : 10px;
+
+$bodyBg : #F0F2F5;
+$bodyTextColor : #000A1E;
+
+$itemBg : #ffffff;
+$itemCloseButtonBg : #F0F2F5;
+
+$info : #0000ff;
+$infoBg : #0000ff38;
+$danger : #ce0000;
+$dangerBg : #ce000038;
+$warning : #ffa500;
+$warningBg : #ffa50038;
+$success : #008000;
+$successBg : #00800038;
+
+@mixin type($color, $bg){
+    .item-body{
+        &-icon{
+            background-color: $bg;
+            svg{
+                stroke: $color;
+            }
+        }
+        &-main{
+            .time{
+                color: $color;
+            }
+        }
+    }
+    span.timer{
+        background-color: $color;
+    }
+}
+.notification{
+    position: fixed;
+    max-width: 450px;
+    width: 100%;
+    left: $margins;
+    top: $margins;
+    font-family: 'Nunito', sans-serif;
+    color: $bodyTextColor;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    &.p-rt{
+        top: $margins;
+        right: $margins;
+        left: unset;
+        bottom: unset;
+    }
+    &.p-rb{
+        top: unset;
+        right: $margins;
+        left: unset;
+        bottom: $margins;
+        flex-direction: column!important;
+    }
+    &.p-lb{
+        top: unset;
+        right: unset;
+        left: $margins;
+        bottom: $margins;
+        flex-direction: column!important;
+    }
+    &.p-ct{
+        top: $margins;
+        right: 0;
+        left: 0;
+        bottom: unset;
+        margin: 0 auto;
+    }
+    &.p-cb{
+        top: unset;
+        right: 0;
+        left: 0;
+        bottom: $margins;
+        margin: 0 auto;
+        flex-direction: column!important;
+    }
+
+    .item{
+        background-color: $itemBg;
+        border-radius: 15px;
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        animation: t-in .5s;
+        &-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            h2.item-header-title{
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            button.close-button{
+                background-color: $itemCloseButtonBg;
+                display: inherit;
+                align-items: inherit;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        &-body{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            &-icon{
+                border-radius: 50%;
+                max-width: 60px;
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &-main{
+                p{
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical; 
+                    overflow:hidden;
+                    margin: 0;
+
+                    &.time{
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+        span.timer{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            opacity: .5;
+        }
+
+        &.info{
+            @include type($info, $infoBg)
+        }
+
+        &.danger{
+            @include type($danger, $dangerBg)
+        }
+
+        &.warning{
+            @include type($warning, $warningBg)
+        }
+
+        &.success{
+            @include type($success, $successBg)
+        }
+    }
+    .outs-leave-active{
+        animation: t-out .5s;
+    }
+    &.p-rt, &.p-ct{
+        .item{
+            animation: t-in .5s;
+        }
+    }
+    &.p-rt, &.p-ct{
+        .outs-leave-active{
+            animation: t-out .5s;
+        }
+    }
+    &.p-lb, &.p-rb, &.p-cb {
+        .item{
+            animation: in .5s;
+        }
+    }
+    &.p-lb, &.p-rb, &.p-cb{
+        .outs-leave-active{
+            animation: out .5s;
+        }
+    }
+}
+
+@keyframes t-in {
+    0%{
+      margin-top: -162px;
+      opacity: 0;
+    }
+    100%{
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes t-out {
+    0%{
+      margin-top: 0;
+      opacity: 1;
+    }
+    100%{
+      margin-top: -172px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes in {
+    0%{
+      margin-bottom: -162px;
+    }
+    100%{
+      margin-bottom: 0;
+    }
+  }
+  
+  @keyframes out {
+    0%{
+      margin-bottom: 0;
+      opacity: 1;
+    }
+    100%{
+      margin-bottom: -172px;
+      opacity: 0;
+    }
+  }
