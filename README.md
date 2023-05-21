@@ -1,7 +1,7 @@
 
 ## notification-vue
 
-[![NPM Version](https://img.shields.io/badge/npm-v1.0.2-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
+[![NPM Version](https://img.shields.io/badge/npm-v1.0.3-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
 
 ## using notification-vue
 
@@ -24,8 +24,30 @@ import notification from 'notification-vue'
 ```
 ready to use
 ```Javascript
-<notification :items="[]"></notification>
+<notification :items="push"></notification>
 ```
+
+```Javascript
+let push = [
+    {
+        type: "success",
+        duration: 6000,
+        time: "2023-01-10 17:30:55",
+        icon: true,
+        title: "New Notification",
+        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis rerum quidem unde reprehenderit iusto dolorum reiciendis quo tenetur magnam! Odio, earum? Quis accusamus magni dolorum officia amet sunt iusto beatae?",
+    },
+    {
+        type: "success",
+        duration: 6000,
+        time: "2023-01-10 17:30:55",
+        icon: true,
+        title: "New Notification 2",
+        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis rerum quidem unde reprehenderit iusto dolorum reiciendis quo tenetur magnam! Odio, earum? Quis accusamus magni dolorum officia amet sunt iusto beatae?",
+    }
+]
+```
+
 
 You can send your notifications as an array with the items prop su to the notification component. 
 
