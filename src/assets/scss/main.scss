@@ -2,7 +2,6 @@
 
 $margins : 10px;
 
-$bodyBg : #F0F2F5;
 $bodyTextColor : #000A1E;
 
 $itemBg : #ffffff;
@@ -46,11 +45,15 @@ $successBg : #00800038;
     display: flex;
     flex-direction: column-reverse;
     gap: 10px;
+    z-index: 9999999999;
     &.p-rt{
         top: $margins;
         right: $margins;
         left: unset;
         bottom: unset;
+        @media(max-width:450px) {
+            
+        }
     }
     &.p-rb{
         top: unset;
@@ -81,7 +84,10 @@ $successBg : #00800038;
         margin: 0 auto;
         flex-direction: column!important;
     }
-
+    @media(max-width:450px) {
+        left: 0;
+        right: 0;
+    }
     .item{
         background-color: $itemBg;
         border-radius: 15px;
@@ -89,6 +95,7 @@ $successBg : #00800038;
         position: relative;
         overflow: hidden;
         animation: t-in .5s;
+        box-shadow: 0 0.25rem 1.125rem rgba(75, 70, 92, 0.1);
         &-header{
             display: flex;
             justify-content: space-between;

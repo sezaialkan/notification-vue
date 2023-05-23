@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "//" : "While providing the use of gulp, the use of --- 'type': 'module' ---- is not provided. You can continue by adding it in the build process" ,
   "module": "./dist/index.js",
   "scripts": {
     "dev": "vite",
@@ -11,12 +12,14 @@
   },
   "dependencies": {
     "gulp-css-minify": "^0.9.2",
-    "gulp-sass": "^5.1.0",
     "vue": "^3.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.1",
     "vite": "^4.3.5"
   }
 }

@@ -1,6 +1,7 @@
 const {parallel, watch, src, dest, series} = require('gulp'),
       sass = require('gulp-sass')(require('sass')),
-      cssMinify = require('gulp-css-minify')   
+      cssMinify = require('gulp-css-minify'),
+      concat = require('gulp-concat')     
 
 let css = () => {
     return src('./src/assets/scss/**/*.scss')

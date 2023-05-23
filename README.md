@@ -1,7 +1,7 @@
 
 ## notification-vue
 
-[![NPM Version](https://img.shields.io/badge/npm-v1.0.3-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
+[![NPM Version](https://img.shields.io/badge/npm-v1.0.5-blue.svg)](https://www.npmjs.com/package/w8icon-vue) 
 
 ## using notification-vue
 
